@@ -35,7 +35,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
                 android:ems="10"
-                android:id="@+id/editText" />
+                android:id="@+id/nameInput" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -53,7 +53,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="number"
                 android:ems="10"
-                android:id="@+id/editText2" />
+                android:id="@+id/ageInput" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -65,19 +65,22 @@
 
             <RadioGroup
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:id="@+id/genderInput">
 
                 <RadioButton
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Мужской"
-                    android:id="@+id/radioButton" />
+                    android:id="@+id/maleInput"
+                    android:checked="true" />
 
                 <RadioButton
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Женский"
-                    android:id="@+id/radioButton2" />
+                    android:id="@+id/femaleInput"
+                    android:checked="false" />
             </RadioGroup>
         </LinearLayout>
     </ScrollView>
@@ -86,9 +89,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Продолжить"
-        android:id="@+id/button"
+        android:id="@+id/continueInput"
         android:layout_below="@+id/scrollView"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="25dp" />
+        android:layout_marginTop="25dp"
+        android:onClick="onContinueClick" />
 
 </RelativeLayout>
