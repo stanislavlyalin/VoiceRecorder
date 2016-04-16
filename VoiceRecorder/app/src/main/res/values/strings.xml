@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">VoiceRecorder</string>
+    <string name="name_query">Ваше имя</string>
+    <string name="age_query">Ваше возраст</string>
+    <string name="gender_query">Выберите ваш пол</string>
+    <string name="male">Мужской</string>
+    <string name="female">Женский</string>
+    <string name="continue_string">Продолжить</string>
 </resources>
