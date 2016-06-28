@@ -1,5 +1,6 @@
 package com.vsu.at.voicerecorder;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -24,18 +25,18 @@ public class InputActivity extends AppCompatActivity {
     }
 
     public void onContinueClick(View view) {
+        // при клике на "Продолжить" запоминаем параметры, а затем закрываем форму
         Speaker speaker = Speaker.getInstance();
         speaker.setName(nameInput.getText().toString());
         speaker.setAge(Integer.valueOf(ageInput.getText().toString()));
+        speaker.setGender((genderInput.getCheckedRadioButtonId() == R.id.femaleInput) ? 1 : 0);
 
-        int gender = 0;
-        if (genderInput.getCheckedRadioButtonId() == R.id.femaleInput)
-            gender = 1;
-
-        speaker.setGender(gender);
-
-        Log.d("VOICE", Speaker.getName());
-        Log.d("VOICE", String.valueOf(Speaker.getAge()));
-        Log.d("VOICE", String.valueOf(Speaker.getGender()));
+        // возвращаем результат главной форме
+        Intent intent = new Intent();
+        intent.putExtra("name", speaker.getName());
+        intent.putExtra("age", speaker.getAge());
+        intent.putExtra("gender", speaker.getGender());
+        setResult(RESULT_OK, intent);
+        finish();
     }
 }
